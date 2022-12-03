@@ -1,0 +1,11 @@
+.env
+
+# build folder
+dist
+
+# node.js
+node_modules/
+npm-debug.log
+
+# firebase admin sdk
+/src/config/firebase-admin-sdk.json
