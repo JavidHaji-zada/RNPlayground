@@ -14,6 +14,15 @@ const spacing = {
 	xxl: scale(32),
 };
 
+const typography = {
+	subtext: 10,
+	text: 12,
+	subtitle: 14,
+	title: 16,
+	subheading: 20,
+	heading: 24,
+};
+
 export const themes: { [key in ThemeName]: Theme } = {
 	[ThemeName.Dark]: {
 		name: ThemeName.Light,
@@ -28,8 +37,14 @@ export const themes: { [key in ThemeName]: Theme } = {
 			accent: "#3A3633",
 			accentSecondary: "#9EA172",
 			background: "#0F000F",
+			text: {
+				light: "#FFFFFF",
+				normal: "#FFFFFF",
+				dark: "#FFFFFF",
+			},
 		},
 		spacing,
+		typography,
 	},
 	[ThemeName.Light]: {
 		name: ThemeName.Light,
@@ -44,7 +59,13 @@ export const themes: { [key in ThemeName]: Theme } = {
 			accent: "#3A3633",
 			accentSecondary: "#9EA172",
 			background: "#F0FFF0",
+			text: {
+				light: "#000000",
+				normal: "#000000",
+				dark: "#000000",
+			},
 		},
 		spacing,
+		typography,
 	},
 };

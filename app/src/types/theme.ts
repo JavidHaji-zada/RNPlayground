@@ -16,6 +16,11 @@ export interface Theme {
 		accent: string;
 		accentSecondary: string;
 		background: string;
+		text: {
+			light: string;
+			normal: string;
+			dark: string;
+		};
 	};
 	spacing: {
 		xs: number;
@@ -28,5 +33,13 @@ export interface Theme {
 		lgl: number;
 		xl: number;
 		xxl: number;
+	};
+	typography: {
+		subtext: number;
+		text: number;
+		subtitle: number;
+		title: number;
+		subheading: number;
+		heading: number;
 	};
 }
