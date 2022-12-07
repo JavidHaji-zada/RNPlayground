@@ -38,9 +38,11 @@ module.exports = {
 		"no-var": "error",
 		semi: "error",
 		"no-multi-spaces": "error",
+		"no-use-before-define": 0,
+		"no-shadow": 0,
 		"space-in-parens": "error",
 		"prefer-const": "error",
-		"no-use-before-define": 0,
+		"react-hooks/exhaustive-deps": 0,
 		"@typescript-eslint/no-use-before-define": 0,
 	},
 	globals: {

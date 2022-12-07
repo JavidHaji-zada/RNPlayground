@@ -7,6 +7,7 @@ import {
 import { useTheme } from "@hooks/context";
 import { Text, TextProps } from "../typography";
 import { Theme } from "@customTypes/theme";
+import { CenteredRow } from "@components/layout";
 
 export interface ButtonProps extends TouchableOpacityProps {
 	text: string;
@@ -21,7 +22,10 @@ export function Button(props: ButtonProps): JSX.Element {
 		<TouchableOpacity
 			{...buttonProps}
 			style={[styles.button, buttonProps.style]}>
-			<Text {...textProps}>{text}</Text>
+			<CenteredRow>
+				<Text {...textProps}>{text}</Text>
+				{props.children}
+			</CenteredRow>
 		</TouchableOpacity>
 	);
 }

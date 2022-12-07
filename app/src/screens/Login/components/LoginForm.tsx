@@ -3,13 +3,14 @@ import { StyleSheet, View } from "react-native";
 import Animated, { FadeInUp, FadeOutUp } from "react-native-reanimated";
 import { AuthType, useLogin } from "../hooks/useLogin";
 import { Text, Title } from "@components/base/typography";
-import { Button, TextButton } from "@components/base/button";
+import { TextButton, ButtonWithSpinner } from "@components/base/button";
 import { CenteredRow } from "@components/layout";
 import { Input } from "@components/base/input";
 import { useTheme } from "@hooks/context";
 import { Theme } from "@customTypes/theme";
 import localizedStrings from "@utils/localization";
 import { responsiveWidth } from "@utils/responsive-dimensions";
+import { QueryStatus } from "@customTypes/index";
 
 export function LoginForm(): JSX.Element {
 	const {
@@ -19,11 +20,12 @@ export function LoginForm(): JSX.Element {
 		lastName,
 		authType,
 		error,
+		queryStatus,
 		setEmail,
 		setPassword,
 		setFirstName,
 		setLastName,
-		login: submitAuth,
+		submit: submitAuth,
 		setAuthType,
 	} = useLogin();
 	const theme = useTheme();
@@ -46,9 +48,12 @@ export function LoginForm(): JSX.Element {
 				onChangeText={setEmail}
 				placeholder={localizedStrings.screens.login["enter-email"]}
 				style={styles.input}
+				keyboardType="email-address"
+				autoCapitalize="none"
 			/>
 			<Input
 				value={password}
+				secureTextEntry
 				onChangeText={setPassword}
 				placeholder={localizedStrings.screens.login["enter-password"]}
 				style={styles.input}
@@ -79,8 +84,10 @@ export function LoginForm(): JSX.Element {
 					</Animated.View>
 				)}
 			</View>
-			<Text color={theme.color.danger}>{error}</Text>
-			<Button
+			<Text color={theme.color.danger}>{error?.message}</Text>
+			<ButtonWithSpinner
+				loading={queryStatus === QueryStatus.LOADING}
+				disabled={queryStatus !== QueryStatus.IDLE}
 				text={
 					authType === AuthType.Login
 						? localizedStrings.buttons.login

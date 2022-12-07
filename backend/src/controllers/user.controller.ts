@@ -1,10 +1,10 @@
+import express, { Router } from "express";
 import { UnknownError } from "@customTypes/custom";
 import { Language } from "@customTypes/localization";
 import { UserService } from "@services/user.service";
 import translate from "@utils/translation.util";
-import express, { Router } from "express";
 import asyncHandler from "express-async-handler";
-import authMiddledware from "middlewares/auth";
+import authMiddledware from "@middlewares/auth";
 
 class UserController {
 	router: Router;

@@ -10,12 +10,15 @@
 		"test": "jest",
 		"lint": "eslint . --ext .js,.jsx,.ts,.tsx",
 		"prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+		"pod-install:m1": "cd ios && RCT_NEW_ARCH_ENABLED=1 bundle exec arch -x86_64 pod install",
 		"pod-install": "cd ios && RCT_NEW_ARCH_ENABLED=1 bundle exec pod install"
 	},
 	"dependencies": {
 		"@react-native-firebase/app": "^14.5.1",
+		"@react-native-firebase/auth": "^14.5.1",
 		"@react-navigation/native": "^6.0.16",
 		"@react-navigation/native-stack": "^6.9.4",
+		"axios": "^1.2.1",
 		"localized-strings": "^0.2.4",
 		"react": "18.1.0",
 		"react-native": "0.70.6",

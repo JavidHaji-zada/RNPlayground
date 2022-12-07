@@ -1,6 +1,7 @@
 import { AtLeast } from "@customTypes/custom";
 import { User } from "@entities/index";
 import { UserDocument, UserModel } from "@models/user.model";
+import { PublicUserProjection } from "@utils/constants/projections";
 
 export class UserService {
 	// create user
@@ -21,7 +22,10 @@ export class UserService {
 		firebaseUID: User["firebaseUID"],
 	): Promise<UserDocument> {
 		try {
-			const userDoc = await UserModel.findOne({ firebaseUID }).exec();
+			const userDoc = await UserModel.findOne(
+				{ firebaseUID },
+				PublicUserProjection,
+			).exec();
 			if (!userDoc) {
 				throw Error("user_does_not_exist");
 			}
