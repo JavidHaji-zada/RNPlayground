@@ -23,9 +23,16 @@ const typography = {
 	heading: 24,
 };
 
+const layout = {
+	borderRadiusSM: scale(4),
+	borderRadiusMD: scale(8),
+	borderRadiusLG: scale(16),
+	borderRadiusXL: scale(24),
+};
+
 export const themes: { [key in ThemeName]: Theme } = {
 	[ThemeName.Dark]: {
-		name: ThemeName.Light,
+		name: ThemeName.Dark,
 		color: {
 			primary: "#5BA561",
 			secondary: "#89D37D",
@@ -45,6 +52,7 @@ export const themes: { [key in ThemeName]: Theme } = {
 		},
 		spacing,
 		typography,
+		layout,
 	},
 	[ThemeName.Light]: {
 		name: ThemeName.Light,
@@ -67,5 +75,6 @@ export const themes: { [key in ThemeName]: Theme } = {
 		},
 		spacing,
 		typography,
+		layout,
 	},
 };

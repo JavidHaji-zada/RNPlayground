@@ -1,0 +1,14 @@
+{
+	"buttons": {
+		"login": "Login",
+		"register": "Register"
+	},
+	"screens": {
+		"login": {
+			"enter-email": "Enter email",
+			"enter-password": "Enter password",
+			"enter-first-name": "Enter first name",
+			"enter-last-name": "Enter last name"
+		}
+	}
+}

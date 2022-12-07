@@ -42,4 +42,10 @@ export interface Theme {
 		subheading: number;
 		heading: number;
 	};
+	layout: {
+		borderRadiusSM: number;
+		borderRadiusMD: number;
+		borderRadiusLG: number;
+		borderRadiusXL: number;
+	};
 }
