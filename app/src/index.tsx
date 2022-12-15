@@ -1,15 +1,21 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
 import { ThemeProvider } from "@contexts/theme";
 import RootNavigator from "@navigation/root";
+import { StoreProvider } from "@contexts/store";
 
 function App(): JSX.Element {
 	return (
-		<View style={styles.container}>
-			<ThemeProvider>
-				<RootNavigator />
-			</ThemeProvider>
-		</View>
+		<ThemeProvider>
+			<StoreProvider>
+				<View style={styles.container}>
+					<NavigationContainer>
+						<RootNavigator />
+					</NavigationContainer>
+				</View>
+			</StoreProvider>
+		</ThemeProvider>
 	);
 }
 

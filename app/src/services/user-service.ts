@@ -50,7 +50,7 @@ export class UserService {
 	static async getUser(): Promise<User> {
 		try {
 			const res = await axios.get(endpoint);
-			return new User(res.data.message);
+			return res.data.message;
 		} catch (error: unknown) {
 			throw Error(
 				(error as unknown as any)?.data?.message ||

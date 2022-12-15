@@ -14,4 +14,14 @@ export class User {
 		this.firstName = details.firstName;
 		this.lastName = details.lastName;
 	}
+
+	static get template(): User {
+		return new User({
+			_id: "",
+			firebaseUID: "",
+			email: "",
+			firstName: "",
+			lastName: "",
+		});
+	}
 }

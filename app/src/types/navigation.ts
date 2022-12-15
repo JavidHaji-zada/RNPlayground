@@ -33,3 +33,5 @@ export type AppNavigationParamList = {
 
 export type AppNavigationProp =
 	NativeStackNavigationProp<AppNavigationParamList>;
+
+export type AppScreen = HomeStackScreen | AuthStackScreen;
